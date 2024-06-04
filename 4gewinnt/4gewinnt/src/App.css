@@ -1,0 +1,58 @@
+.header {
+
+    font-family: Arial;
+    font-size: 40px;
+    text-align: center;
+    color: #012c45;
+
+
+}
+
+.container {
+    margin-top: -350px;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Buttons {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.secondTextField {
+}
+
+.secondButton {
+    margin-left: 100px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #012c45;
+    color: #555353;
+    text-align: center;
+}
+
+.ChatWrapper{
+    position: fixed;
+    top: 200px;
+    right: 0;
+    margin-right: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.gameIdTf{
+    margin-right: -100px;
+
+}
