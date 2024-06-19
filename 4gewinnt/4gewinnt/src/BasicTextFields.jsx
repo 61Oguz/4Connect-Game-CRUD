@@ -2,9 +2,12 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
+import SaveIcon from '@mui/icons-material/Save';
+import {useParams} from "react-router-dom";
 
 
 export default function BasicTextFields(props) {
+  const params = useParams();
   function handlePlayer1NameChange(event) {
     props.setPlayer1Name(event.target.value);
   }
@@ -14,7 +17,7 @@ export default function BasicTextFields(props) {
   }
 
   const deletePlayerNames = () => {
-    fetch("http://localhost:8080/playernames", {
+    fetch(`http://localhost:8080/playernames/${params.gameId}`, {
       method: "DELETE",
     });
     props.setPlayer1Name("");
@@ -22,13 +25,13 @@ export default function BasicTextFields(props) {
   };
 
   const deleteBoard = () => {
-    fetch("http://localhost:8080/board", {
+    fetch(`http://localhost:8080/board/${params.gameId}`, {
       method: "DELETE",
     });
   };
 
   function setPlayerNames(player1name, player2name) {
-    fetch("http://localhost:8080/playernames", {
+    fetch(`http://localhost:8080/playernames/${params.gameId}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -61,9 +64,10 @@ export default function BasicTextFields(props) {
           size="small"
           color="success"
           variant="contained"
+          startIcon ={<SaveIcon/>}
           onClick={() => setPlayerNames(props.player1Name, props.player2Name)}
         >
-          Save Player Names
+          {"Save The Names " + '\xa0'}
         </Button>
         <div className={"Buttons"}>
           <Button
@@ -72,6 +76,7 @@ export default function BasicTextFields(props) {
             variant="contained"
             onClick={deletePlayerNames}
             startIcon={<DeleteIcon />}
+
           >
             Reset The Names
           </Button>
@@ -84,7 +89,7 @@ export default function BasicTextFields(props) {
             variant="contained"
             onClick={() => deleteBoard()}
           >
-            Reset the Board
+            Reset The Board
           </Button>
         </div>
       </div>

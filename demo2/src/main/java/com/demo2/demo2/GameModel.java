@@ -2,33 +2,55 @@ package com.demo2.demo2;
 
 public class GameModel {
 
-    private String player1;
+  private int column;
 
-    private String player2;
+  private String playerSymbol;
 
-    private String[][] board = new String[6][7] ;
+  private String[][] board = new String[6][7];
 
-    public String getPlayer1() {
-        return player1;
-    }
+  private PlayerNamesModel playerNames;
 
-    public void setPlayer1(String player1) {
-        this.player1 = player1;
-    }
+  private String winner;
 
-    public String getPlayer2() {
-        return player2;
-    }
+  public  void setGameId(String gameId) {
+    this.gameId = gameId;
+  }
 
-    public void setPlayer2(String player2) {
-        this.player2 = player2;
-    }
+  private String gameId;
 
-    public String[][] getBoard() {
-        return board;
-    }
+  public String getGameId() {
+    return gameId;
+  }
 
-    public void setBoard(String[][] board) {
-        this.board = board;
-    }
+  public int getColumn() {
+    return column;
+  }
+
+  public String getPlayerSymbol() {
+    return playerSymbol;
+  }
+
+  public String[][] getBoard() {
+    return board;
+  }
+
+  public void setBoard(String[][] board) {
+    this.board = board;
+  }
+
+  public PlayerNamesModel getPlayerNames() {
+    return playerNames;
+  }
+
+  public void setPlayerNames(PlayerNamesModel playerNames) {
+    this.playerNames = playerNames;
+  }
+
+  public String getWinner() {
+    return winner;
+  }
+
+  public void setWinner(String winner) {
+    this.winner = winner;
+  }
 }

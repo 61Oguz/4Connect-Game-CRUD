@@ -1,3 +1,11 @@
+.body {
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 .header {
 
     font-family: Arial;
@@ -6,6 +14,27 @@
     color: #012c45;
 
 
+}
+.card {
+    background-color: #ffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 20%;
+    overflow-x: hidden;
+}
+
+.card{
+    margin-top: 0;
+}
+
+.buttons-container {
+    margin-top: 20px;
+}
+
+.textFields{
+    margin-bottom: 10px;
 }
 
 .container {
@@ -56,3 +85,57 @@
     margin-right: -100px;
 
 }
+
+.welcomePage {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+@media (max-width: 1200px) {
+    .card {
+        height:30% ;
+        width: 30%;
+    }
+    .buttons-container {
+        flex-direction: column;
+    }
+    .Buttons {
+        width: 100%;
+    }
+    .secondButton {
+        margin-left: 0;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .card {
+        height:30% ;
+        width: 30%;
+    }
+    .buttons-container {
+        flex-direction: column;
+    }
+    .Buttons {
+        width: 100%;
+
+        .secondButton {
+            margin-left: 0;
+        }
+
+
+    }}
+

@@ -1,8 +1,8 @@
 import * as React from "react";
-import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import Board from "./Board.jsx";
+import DeleteIcon from "@mui/icons-material/Delete";
+
 
 export default function BasicTextFields(props) {
   function handlePlayer1NameChange(event) {
@@ -13,11 +13,31 @@ export default function BasicTextFields(props) {
     props.setPlayer2Name(event.target.value);
   }
 
-  function handleReset() {
+  const deletePlayerNames = () => {
+    fetch("http://localhost:8080/playernames", {
+      method: "DELETE",
+    });
     props.setPlayer1Name("");
     props.setPlayer2Name("");
-  }
+  };
 
+  const deleteBoard = () => {
+    fetch("http://localhost:8080/board", {
+      method: "DELETE",
+    });
+  };
+
+  function setPlayerNames(player1name, player2name) {
+    fetch("http://localhost:8080/playernames", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        player1Name: player1name,
+        player2Name: player2name,
+      }),
+    });
+
+  }
   return (
     <div>
       <div className={"TextFields"}>
@@ -35,12 +55,37 @@ export default function BasicTextFields(props) {
           value={props.player2Name}
           onChange={handlePlayer2NameChange}
         />
+        <h2>Player1: {props.player1Name}</h2>
+        <h2>Player2: {props.player2Name}</h2>
+        <Button
+          size="small"
+          color="success"
+          variant="contained"
+          onClick={() => setPlayerNames(props.player1Name, props.player2Name)}
+        >
+          Save Player Names
+        </Button>
         <div className={"Buttons"}>
-          <Button variant="contained" onClick={handleReset}>
-            Reset The Game
+          <Button
+            size="small"
+            color="error"
+            variant="contained"
+            onClick={deletePlayerNames}
+            startIcon={<DeleteIcon />}
+          >
+            Reset The Names
           </Button>
-          <h1>Player1: {props.player1Name}</h1>
-          <h1>Player2: {props.player2Name}</h1>
+        </div>
+        <div>
+          <Button
+            size="small"
+            startIcon={<DeleteIcon />}
+            color="error"
+            variant="contained"
+            onClick={() => deleteBoard()}
+          >
+            Reset the Board
+          </Button>
         </div>
       </div>
     </div>

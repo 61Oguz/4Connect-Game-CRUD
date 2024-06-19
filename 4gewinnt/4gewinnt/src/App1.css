@@ -1,0 +1,152 @@
+body {
+    background-color: #6e8888;
+
+}
+.header {
+    font-family: Arial;
+    font-size: 40px;
+    text-align: center;
+    color: #e4e7ea;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 18%;
+    overflow-x: hidden;
+    margin-right: 20px;
+
+}
+
+.card\>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.buttons-container {
+    margin-top: 20px;
+    width: 58%;
+
+}
+
+.textFields {
+    margin-bottom: 10px;
+    width: 80%; /* make the text fields full-width */
+}
+
+.container {
+    max-width: fit-content;
+    margin-top: -450px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Buttons {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 230px;
+}
+
+.secondTextField {
+}
+
+.secondButton {
+    margin-left: 0;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #012c45;
+    color: #555353;
+    text-align: center;
+}
+
+.ChatWrapper {
+    position: fixed;
+    top: 200px;
+    right: 0;
+    margin-right: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.gameIdTf {
+    margin-right: -100px;
+}
+
+.welcomePage {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width: 300px,) {
+    .card {
+        width: 10%;
+        height:30% ;
+    }
+
+
+
+    .Buttons {
+        width: 10%;
+    }
+
+    .textFields {
+        width: 10%;
+    }
+
+    .container {
+        width: 10%;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 10%;
+        height:30% ;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+    }
+
+    .Buttons {
+        width: 10%;
+    }
+
+    .textFields {
+        width: 10%;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
