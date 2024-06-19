@@ -1,0 +1,1 @@
+Connect4 game is a game that can be played with two players the aim is to complete 4 tokens before your opponent. A simple CRUD applciation created with Spring-Boot backend and JSReact at the front-end.
